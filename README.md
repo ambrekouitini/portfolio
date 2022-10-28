@@ -1,4 +1,4 @@
-# How to install this project ? :
+# How to install this project ?
 - Download from the repo the files in zip.
 - Unzip the file and launch the index.html file in your browser
 
@@ -9,7 +9,8 @@ Codefactor serves to performs Code Review with every GitHub Commit or PR. Zero s
 Codacy is an automated code analysis/quality tool that helps developers ship better software, faster. With Codacy, you get static analysis, cyclomatic complexity, duplication and code unit test coverage changes in every commit and pull request
 
 
-## This FrontEnd Portfolio is a project due November 6. <br>
+## FrontEnd Portfolio Subject <br>
+## Due November 6 <br>
 ### The instructions are :<br>
   - Major (65% of the grade)<br>
     ¤ Use of basilization and stylesheet technologies<br>
