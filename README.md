@@ -10,7 +10,7 @@ Codacy is an automated code analysis/quality tool that helps developers ship bet
 
 
 ## FrontEnd Portfolio Subject <br>
-## Due November 6 <br>
+Due November 6 <br>
 ### The instructions are :<br>
   - Major (65% of the grade)<br>
     ¤ Use of basilization and stylesheet technologies<br>
