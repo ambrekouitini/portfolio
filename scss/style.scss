@@ -98,21 +98,17 @@ header{
         @include mixins.breakpoint(768px){
             width: auto;
         }
-
         @media screen and (max-width: 1030px) {
         grid-template-columns: 20% 50% 30%;
         }
-
         @media screen and (max-width: 768px) {
         grid-template-columns: 25% 75%;
         width: 100%;
         max-width: none;
         }
-
         @media screen and (max-width: 560px) {
         grid-template-columns: 100%;
         }
-
     
     &-header {
         display: flex;
