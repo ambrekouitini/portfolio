@@ -17,13 +17,13 @@ $border-color: #94918f;
 html, body{
     height:100%;
     width: 100%;
+    background-color: $blog-bg;
 }
 .all{
     height:100%;
     width: 100%;
     display: flex;
     flex-direction: row;
-    background-color: $blog-bg;
     // padding: 3px 15px;
     @include mixins.breakpoint(768px){
         display: inline;
@@ -35,7 +35,7 @@ header{
     height:100%;
     @include mixins.breakpoint(768px){
         width: 100%;
-        height: 7%;
+        height: 10%;
     }
     .menu{
         width:100%;
@@ -46,10 +46,8 @@ header{
         align-items: center;
         border-right: 1px solid $border-color;
         @include mixins.breakpoint(768px){
-            height: 7%;
-            position: fixed;
             border-bottom: 1px solid $border-color;
-
+            background: #b8b8b8;
         }
 
         .menu-top{
@@ -70,27 +68,74 @@ header{
                 transform: rotate(-90deg);
                 font-size: 65px;
                 letter-spacing: 20px;
+                @include mixins.breakpoint(768px){
+                    -webkit-transform: rotate(0deg);   
+                    transform: rotate(0deg);
+                    font-size: 30px;
+                }
             }
         }
-        .menu-bottom{
+        .menu-bottom {
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 10%;
-            list-style: none;
+            .social-icons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-flow: row wrap;
+                .social-icon {
+                    display: flex;
+                    position: relative;
+                    overflow: hidden; /* Trim branded overlays */ 
+                    width: 50px;
+                    height: 50px;
+                    margin: 8px;
+                    background-color: white;
+                    border-radius: 50%;
+                    box-shadow: 0px 1px 3px rgba(0,0,0,0.12);
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+                    i {
+                        margin: auto; 
+                        font-size: 24px;
+                        color: hsl(212,16%,48%);
+                        z-index: 1; 
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+            .social-icon:after {
+                content: "";
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                transform: translate(0, 50px);
+                border-radius: 50%;
+                transition: all 0.3s ease;
+            }
+            
+            .social-icon.github:after {
+                background-color: #24292e;
+            }
+            
+            .social-icon.linkedin:after {
+                background-color: #0e76a8;
+            }
+            
+            .social-icon:hover {
+                transform: translateY(-4px);
+                box-shadow: 0px 4px 12px rgba(0,0,0,0.16);
+            }
+            
+            .social-icon:hover i {
+                color: #fff;
+            }
+            
+            .social-icon:hover:after {
+                transform: translate(0) scale(1.2);
+            }
             @include mixins.breakpoint(768px){
                 display: none;
             }
-        }
-        .menu-link{
-            font-family: new-order-regular;
-            font-size: 1.4rem;
-            text-decoration: none;
-            list-style: none;
-            color: $subtitle-color;
-            letter-spacing: -0.5px;
-            display: flex;
-            align-items: center;
         }
     }
 }
@@ -107,7 +152,6 @@ header{
         @include mixins.breakpoint(768px){
             display: inline;
         }
-
         .container-left{
             // background-color: green ;
             width: 40%;
@@ -128,11 +172,19 @@ header{
                 flex-direction: column;
                 padding: 0 20px;
                 padding-bottom: 10px;
+                @include mixins.breakpoint(768px){
+                    align-items: center;
+                }
                 .medium-title-all{
                     display: flex;
                     flex-direction: row;
                     gap: 10px;                           
                     border-bottom: 1px solid #94918f;
+                }
+            }
+            .big-title-hidden{
+                @include mixins.minwidth(768px){
+                    display: none;
                 }
             }
             .all-info{
@@ -162,11 +214,10 @@ header{
                         width: 100%;
                         display: flex;
                         flex-direction: column;
-                        // align-items: flex-start;
+                        align-items: center;
                         overflow: hidden;
                         gap: 15px;
                         padding: 30px;
-
                         .skills{
                             &-simple{
                                 font-family: noka, sans-serif;
@@ -199,6 +250,63 @@ header{
                             }
                         }
                     }
+                    .donut-all{
+                        gap: 10px;
+                        display: flex;
+                        flex-direction: row;
+                        width: 100%;
+                        height: 100%;
+                        margin-top: 30px;
+                        .semidonut:nth-child(1){
+                            --percentage: 80;
+                        }
+                        .semidonut:nth-child(2){
+                            --percentage: 60;
+                        }
+                        .semidonut{
+                            --percentage: 0;
+                            --fill: #333333;
+                            width: 300px;
+                            height: 95px;
+                            margin: auto;
+                            position: relative;
+                            color: #fff;
+                            font-size: 22px;
+                            font-weight: 600;
+                            overflow: hidden;
+                            color: var(--fill);
+                            display: flex;
+                            box-sizing: border-box;
+                            justify-content: center;
+                            align-items: flex-end;
+                        
+                            &:after{
+                                content: "";
+                                width: 215px;
+                                height: 215px;
+                                border: 50px solid;
+                                border-color: rgb(141 141 141 / 28%) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
+                                position: absolute;
+                                border-radius: 50%;
+                                /* left: 0; */
+                                top: 0;
+                                box-sizing: border-box;
+                                transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
+                                animation: fillAnimation 3s ease-in;
+                            }
+                        
+                        }
+                        
+                        @keyframes fillAnimation{
+                            0%{transform : rotate(-45deg);}
+                            50%{transform: rotate(135deg);}
+                        }
+                        
+                        @keyframes fillGraphAnimation{
+                            0%{transform: rotate(0deg);}
+                            50%{transform: rotate(180deg);}
+                        }
+                    }
                 }
             }
         }
@@ -213,8 +321,11 @@ header{
             overflow-x: hidden;
             scroll-snap-type: y mandatory;
             border-right: 1px solid $border-color;
-
             @include mixins.breakpoint(768px){
+                overflow-y: visible;
+                overflow-x: visible;            
+                scroll-snap-type: none; 
+                justify-content: space-between;
                 width: 100%;
                 height: 100%;
             }
@@ -224,7 +335,12 @@ header{
                     flex-shrink: 0;
                     min-height: 100%;
                     scroll-snap-align: start;
-                    .header{
+                    @include mixins.breakpoint(768px){
+                        scroll-snap-align: none;
+                        min-height: 0%;
+                    }
+            
+                    .second-header{
                         // background-color: yellow;
                         width: 100%;
                         display: flex;
@@ -236,6 +352,16 @@ header{
                             gap: 10px;
                             justify-content: flex-end;
                             border-bottom: 1px solid #94918f;
+                        }
+                    }
+                    .big-title{
+                        @include mixins.breakpoint(768px){
+                            display: none;
+                        }
+                    }
+                    .big-title-hidden{
+                        @include mixins.minwidth(768px){
+                            display: none;
                         }
                     }
                     .box{
@@ -267,6 +393,10 @@ header{
                             margin-top: auto;
                             border-top: 1px solid #94918f;
                             padding-top: 15px;
+                            @include mixins.breakpoint(768px){
+                                display: none;
+                            }
+                            
                             svg {
                                 width: 26px;
                                 margin-right: 10px;
@@ -282,6 +412,19 @@ header{
         font-family: reross-quadratic, sans-serif;
         margin-bottom: 6px;        
         padding-bottom: 20px;
+        @include mixins.breakpoint(768px){
+            font-size: 5rem;
+            font-family: reross-quadratic, sans-serif;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+        }
+    }
+
+    .big-title-hidden{
+        font-size: 5rem;
+        font-family: reross-quadratic, sans-serif;
+        margin-top: 25px;
+        padding-bottom: 20px;
     }
 
     .medium-title{
@@ -293,6 +436,6 @@ header{
     }
 
     .info + .info {
-        margin-top: 50px;
+        margin-top: 30px;
     }
 }
