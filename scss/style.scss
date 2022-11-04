@@ -13,13 +13,13 @@ $title-color: #121418;
 $subtitle-color: #161419;
 $border-color: #94918f;
 
-p{
-    font-family: stolzl-light;
-    max-width: 33ch;
-    font-size: 19px;
-    margin-top: 12px;
-    line-height: 1.4;
-}
+// p{
+//     font-family: stolzl-light;
+//     max-width: 33ch;
+//     font-size: 19px;
+//     margin-top: 12px;
+//     line-height: 1.4;
+// }
 
 html, body{
     height:100%;
@@ -143,6 +143,13 @@ header{
                         letter-spacing: 1px;
                         font-family: alfarn-2;
                     }
+                    // p{
+                    //     font-family: stolzl-light;
+                    //     max-width: 33ch;
+                    //     font-size: 19px;
+                    //     margin-top: 12px;
+                    //     line-height: 1.4;
+                    // }
                     .container {
                         height: 100vh;
                         width: 100%;
