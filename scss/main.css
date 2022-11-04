@@ -6,22 +6,24 @@
 
 p {
   font-family: stolzl-light;
-  max-width: 33ch;
-  font-size: 19px;
-  margin-top: 12px;
-  line-height: 1.4;
+  max-width: 45ch;
+  font-size: 18px;
 }
 
 html, body {
   height: 100%;
   width: 100%;
+}
+
+.all {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   background-color: #e9e6e4;
-  padding: 3px 15px;
 }
 @media screen and (max-width: 768px) {
-  html, body {
+  .all {
     display: inline;
   }
 }
@@ -43,7 +45,6 @@ header .menu {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 30px;
   border-right: 1px solid #94918f;
 }
 @media screen and (max-width: 768px) {
@@ -56,12 +57,10 @@ header .menu {
 header .menu .menu-top {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10%;
-  gap: 5%;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 768px) {
   header .menu .menu-top {
@@ -70,6 +69,12 @@ header .menu .menu-top {
     justify-content: center;
     align-items: center;
   }
+}
+header .menu .menu-top h1 {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  font-size: 65px;
+  letter-spacing: 20px;
 }
 header .menu .menu-bottom {
   width: 100%;
@@ -115,7 +120,7 @@ header .menu .menu-link {
   display: flex;
   flex-direction: column;
   overflow: auto;
-  padding: 0 20px;
+  padding-right: 20px;
 }
 @media screen and (max-width: 768px) {
   .main .all-container .container-left {
@@ -131,10 +136,17 @@ header .menu .menu-link {
   padding: 0 20px;
   padding-bottom: 10px;
 }
+.main .all-container .container-left .header .medium-title-all {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-bottom: 1px solid #94918f;
+}
 .main .all-container .container-left .all-info {
   overflow: auto;
   height: calc(100% + 60px);
   padding: 0 20px;
+  border-right: 1px solid #94918f;
 }
 .main .all-container .container-left .all-info .info {
   margin-bottom: 15px;
@@ -148,6 +160,44 @@ header .menu .menu-link {
   font-weight: 0;
   letter-spacing: 1px;
   font-family: alfarn-2;
+}
+.main .all-container .container-left .all-info .info .skills-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: 15px;
+  padding: 30px;
+}
+.main .all-container .container-left .all-info .info .skills-container .skills-simple {
+  font-family: stolzl-light;
+  font-size: 18px;
+  white-space: nowrap;
+  animation: Scroll 3s linear infinite alternate;
+}
+@keyframes Scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.main .all-container .container-left .all-info .info .skills-container .skills-reverse {
+  font-family: stolzl-light;
+  font-size: 18px;
+  white-space: nowrap;
+  animation: Scroll 3s linear infinite alternate;
+  animation-delay: -2s;
+}
+@keyframes Scroll {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 .main .all-container .container-right {
   width: 60%;
@@ -171,7 +221,6 @@ header .menu .menu-link {
   flex-shrink: 0;
   min-height: 100%;
   scroll-snap-align: start;
-  padding: 0 20px;
 }
 .main .all-container .container-right .article .header {
   width: 100%;
@@ -180,15 +229,19 @@ header .menu .menu-link {
   padding: 0 20px;
   padding-bottom: 10px;
 }
+.main .all-container .container-right .article .header .medium-title-all {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  border-bottom: 1px solid #94918f;
+}
 .main .all-container .container-right .article .box {
   margin: 20px;
 }
 .main .all-container .container-right .article .box img {
-  height: 260px;
-  max-height: 22vh;
+  max-height: 40vh;
   width: 100%;
   object-fit: cover;
-  filter: grayscale(1);
 }
 .main .all-container .container-right .article .box h2 {
   font-size: 30px;
@@ -199,7 +252,7 @@ header .menu .menu-link {
 }
 .main .all-container .container-right .article .box p {
   line-height: 1.5;
-  margin: 15px 30px 74px 0px;
+  margin: 15px 10px 50px 0px;
 }
 .main .all-container .container-right .article .box .plus {
   font-size: 28px;
@@ -225,7 +278,6 @@ header .menu .menu-link {
   font-family: new-order, sans-serif;
   font-weight: 400;
   padding-bottom: 20px;
-  border-bottom: 1px solid #94918f;
   font-style: italic;
 }
 .main .info + .info {
