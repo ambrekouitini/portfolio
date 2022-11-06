@@ -24,7 +24,6 @@ html, body{
     width: 100%;
     display: flex;
     flex-direction: row;
-    // padding: 3px 15px;
     @include mixins.breakpoint(768px){
         display: inline;
     }
@@ -45,6 +44,7 @@ header{
         justify-content: space-between;
         align-items: center;
         border-right: 1px solid $border-color;
+        background-color: #2e2e2e;
         @include mixins.breakpoint(768px){
             border-bottom: 1px solid $border-color;
             background: #b8b8b8;
@@ -64,10 +64,14 @@ header{
                 align-items: center;
             }
             h1{
+                display: none;
+            }
+            h2{
                 -webkit-transform: rotate(-90deg);   
                 transform: rotate(-90deg);
                 font-size: 65px;
                 letter-spacing: 20px;
+                color: white;
                 @include mixins.breakpoint(768px){
                     -webkit-transform: rotate(0deg);   
                     transform: rotate(0deg);
@@ -85,7 +89,7 @@ header{
                 .social-icon {
                     display: flex;
                     position: relative;
-                    overflow: hidden; /* Trim branded overlays */ 
+                    overflow: hidden;
                     width: 50px;
                     height: 50px;
                     margin: 8px;
@@ -112,24 +116,19 @@ header{
                 border-radius: 50%;
                 transition: all 0.3s ease;
             }
-            
             .social-icon.github:after {
                 background-color: #24292e;
             }
-            
             .social-icon.linkedin:after {
                 background-color: #0e76a8;
             }
-            
             .social-icon:hover {
                 transform: translateY(-4px);
                 box-shadow: 0px 4px 12px rgba(0,0,0,0.16);
             }
-            
             .social-icon:hover i {
                 color: #fff;
             }
-            
             .social-icon:hover:after {
                 transform: translate(0) scale(1.2);
             }
@@ -143,7 +142,6 @@ header{
 .main{
     width: 100%;
     height: 100%;
-    // background-color: pink;
     .all-container{
         display: flex;
         flex-direction: row;
@@ -153,7 +151,6 @@ header{
             display: inline;
         }
         .container-left{
-            // background-color: green ;
             width: 40%;
             height: 100%;
             display: flex;
@@ -165,7 +162,6 @@ header{
                 height: auto;
             }
             .header{
-                // background-color: grey;
                 height: 25%;
                 width: 100%;
                 display: flex;
@@ -279,7 +275,6 @@ header{
                             box-sizing: border-box;
                             justify-content: center;
                             align-items: flex-end;
-                        
                             &:after{
                                 content: "";
                                 width: 215px;
@@ -288,20 +283,16 @@ header{
                                 border-color: rgb(141 141 141 / 28%) rgba(0, 0, 0, 0.15) var(--fill) var(--fill);
                                 position: absolute;
                                 border-radius: 50%;
-                                /* left: 0; */
                                 top: 0;
                                 box-sizing: border-box;
                                 transform: rotate(calc(1deg * (-45 + var(--percentage) * 1.8)));
                                 animation: fillAnimation 3s ease-in;
                             }
-                        
                         }
-                        
                         @keyframes fillAnimation{
                             0%{transform : rotate(-45deg);}
                             50%{transform: rotate(135deg);}
                         }
-                        
                         @keyframes fillGraphAnimation{
                             0%{transform: rotate(0deg);}
                             50%{transform: rotate(180deg);}
@@ -312,7 +303,6 @@ header{
         }
 
         .container-right{
-            // background-color: blueviolet ;
             width: 60%;
             height: 100%;
             display: flex;
@@ -339,9 +329,7 @@ header{
                         scroll-snap-align: none;
                         min-height: 0%;
                     }
-            
                     .second-header{
-                        // background-color: yellow;
                         width: 100%;
                         display: flex;
                         flex-direction: column;
@@ -396,7 +384,6 @@ header{
                             @include mixins.breakpoint(768px){
                                 display: none;
                             }
-                            
                             svg {
                                 width: 26px;
                                 margin-right: 10px;
