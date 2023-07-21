@@ -7,11 +7,12 @@
     box-sizing: border-box;
 }
 
-$blog-bg: #e9e6e4;
+$blog-bg: #e9e4e4;
 $body-bg: #121418;
 $title-color: #121418;
 $subtitle-color: #161419;
 $border-color: #94918f;
+$hover-color: #535353;
 
 
 html, body{
@@ -71,7 +72,7 @@ header{
                 transform: rotate(-90deg);
                 font-size: 65px;
                 letter-spacing: 20px;
-                color: white;
+                color: $blog-bg;
                 @include mixins.breakpoint(768px){
                     -webkit-transform: rotate(0deg);   
                     transform: rotate(0deg);
@@ -93,7 +94,7 @@ header{
                     width: 50px;
                     height: 50px;
                     margin: 8px;
-                    background-color: white;
+                    background-color: $blog-bg;
                     border-radius: 50%;
                     box-shadow: 0px 1px 3px rgba(0,0,0,0.12);
                     text-decoration: none;
@@ -140,8 +141,11 @@ header{
 }
 
 .main{
-    width: 100%;
+    width: 85%;
     height: 100%;
+    @include mixins.breakpoint(768px){
+        width: 100%;
+    }
     .all-container{
         display: flex;
         flex-direction: row;
@@ -149,6 +153,7 @@ header{
         height: 100%;
         @include mixins.breakpoint(768px){
             display: inline;
+
         }
         .container-left{
             width: 40%;
@@ -160,6 +165,7 @@ header{
             @include mixins.breakpoint(768px){
                 width: 100%;
                 height: auto;
+                padding: 0;
             }
             .header{
                 height: 25%;
@@ -222,10 +228,10 @@ header{
                                 animation : Scroll 3s linear infinite alternate ;
                                 @keyframes Scroll {
                                     0% { 
-                                        transform : translateX(-100%);
+                                        transform : translateX(-30%);
                                     }
                                     100%{
-                                        transform : translateX(0%);
+                                        transform : translateX(30%);
                                     }
                                 }
                             }
@@ -234,13 +240,13 @@ header{
                                 font-size: 18px;
                                 white-space : nowrap;
                                 animation : Scroll 3s linear infinite alternate ;
-                                animation-delay: -2s;
+                                animation-delay: -3s;
                                 @keyframes Scroll {
                                     0% { 
-                                        transform : translateX(-100%);
+                                        transform : translateX(-30%);
                                     }
                                     100%{
-                                        transform : translateX(0%);
+                                        transform : translateX(30%);
                                     }
                                 }
                             }
@@ -354,18 +360,102 @@ header{
                     }
                     .box{
                         margin: 20px;
-                        img {
-                            max-height: 40vh;
-                            width: 100%;
-                            object-fit: cover;
+                        .imginfo {
+                            position: relative;
+                            .projectimg{
+                                max-height: 40vh;
+                                width: 100%;
+                                object-fit: fill;
+                            }
+                            .hoverinfo{
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                bottom: 0;
+                                width: 100%;
+                                max-height: 40vh;
+                                background-color: rgba(0,0,0,0.5);
+                                opacity: 0;
+                                color: #fff;
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between;
+                                padding: 25px;
+                                gap: 30px;
+                                @include mixins.breakpoint(450px){
+                                    display: none;
+                                }
+                                .text{
+                                    display: flex;
+                                    flex-direction: column;
+                                    gap: 15px;
+                                    .textContainer{
+                                        display: flex;
+                                        flex-direction: column;
+                                        gap: 5px;
+                                        p{
+                                            margin: 0;
+                                        }
+                                    }
+                                    p{
+                                        margin: 0;
+                                    }
+                                    h4{
+                                        font-size: 30px;
+                                        letter-spacing: 1px;
+                                        font-family: alfarn-2;
+                                    }
+                                }
+                                .technos{
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    gap: 15px;
+                                    flex-direction: column;
+                                    img{
+                                        width: 50px;
+                                        height: 50px;
+                                    }
+                                }
+                            }
+                            &:hover .hoverinfo{
+                                opacity: 1;
+                                @include mixins.breakpoint(450px){
+                                    display: none;
+                                }
+                            }
+                            &:hover .projectimg{
+                                filter: grayscale(100%) blur(4px);
+                                -webkit-filter: grayscale(100%) blur(5px) brightness(0.5);
+                                @include mixins.breakpoint(450px){
+                                    filter : none;
+                                }
+                            }
                         }
-                        h2 {
-                            font-size: 30px;
-                            line-height: 1.2;
-                            margin: 15px 0 10px;
-                            font-family: noka, sans-serif;
-                            font-weight: 500;   
+                        a{
+                            text-decoration: none;
+                            h2 {
+                                font-size: 25px;
+                                line-height: 1.2;
+                                margin: 15px 0 10px;
+                                font-family: noka, sans-serif;
+                                font-weight: 500;   
+                                color: $title-color;
+                                &:hover{
+                                    color: $hover-color;
+                                }
+                            }
                         }
+
+                        span{
+                            text-decoration: none;
+                            color: $title-color;
+                            &:hover{
+                                text-decoration: underline;
+                                color: $hover-color;
+                            }
+                        }
+
                         p {
                             line-height: 1.5;
                             margin: 15px 10px 50px 0px;
