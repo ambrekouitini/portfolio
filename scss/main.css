@@ -40,7 +40,7 @@ header .menu {
   justify-content: space-between;
   align-items: center;
   border-right: 1px solid #94918f;
-  background-color: #2e2e2e;
+  background-color: #121418;
 }
 @media screen and (max-width: 768px) {
   header .menu {
@@ -106,7 +106,7 @@ header .menu .menu-bottom .social-icons .social-icon {
 header .menu .menu-bottom .social-icons .social-icon i {
   margin: auto;
   font-size: 24px;
-  color: hsl(212deg, 16%, 48%);
+  color: #121418;
   z-index: 1;
   transition: all 0.3s ease;
 }
@@ -215,41 +215,60 @@ header .menu .menu-bottom .social-icon:hover:after {
 }
 .main .all-container .container-left .all-info .info-title {
   font-size: 35px;
-  font-weight: 0;
   letter-spacing: 1px;
   font-family: alfarn-2;
+  padding-bottom: 15px;
 }
 .main .all-container .container-left .all-info .info-text {
   font-family: noka, sans-serif;
-  max-width: 45ch;
   font-size: 18px;
 }
-.main .all-container .container-left .all-info .info .skills {
+.main .all-container .container-left .all-info .info .allskills {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  border-top: 2px solid #121418;
+  border-bottom: 2px solid #121418;
+}
+.main .all-container .container-left .all-info .info .allskills .skills {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-top: 1px solid #121418;
+  border-bottom: 1px solid #121418;
+}
+.main .all-container .container-left .all-info .info .allskills .skills .skills-base {
+  display: inline-block;
+  animation: 20s slide infinite linear;
+}
+.main .all-container .container-left .all-info .info .allskills .skills:hover .skills-base {
+  animation-play-state: paused;
+}
+.main .all-container .container-left .all-info .info .allskills .skills-2 {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
 }
-.main .all-container .container-left .all-info .info .skills .skills-base {
+.main .all-container .container-left .all-info .info .allskills .skills-2 .skills-back {
   display: inline-block;
-  animation: 30s slide infinite linear;
+  animation: 20s slide infinite linear reverse;
 }
-.main .all-container .container-left .all-info .info .skills-2 {
+.main .all-container .container-left .all-info .info .allskills .skills-2:hover .skills-back {
+  animation-play-state: paused;
+}
+.main .all-container .container-left .all-info .info .allskills .skills-3 {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  border-top: 1px solid #121418;
+  border-bottom: 1px solid #121418;
 }
-.main .all-container .container-left .all-info .info .skills-2 .skills-back {
+.main .all-container .container-left .all-info .info .allskills .skills-3 .skills-other {
   display: inline-block;
-  animation: 30s slide infinite linear reverse;
+  animation: 20s slide infinite linear;
 }
-.main .all-container .container-left .all-info .info .skills-3 {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-}
-.main .all-container .container-left .all-info .info .skills-3 .skills-other {
-  display: inline-block;
-  animation: 30s slide infinite linear;
+.main .all-container .container-left .all-info .info .allskills .skills-3:hover .skills-other {
+  animation-play-state: paused;
 }
 .main .all-container .container-left .all-info .info img {
   width: 50px;
@@ -324,6 +343,34 @@ header .menu .menu-bottom .social-icon:hover:after {
     transform: rotate(180deg);
   }
 }
+.main .all-container .container-left .all-info .info .container-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main .all-container .container-left .all-info .info .container-text a {
+  text-decoration: none;
+}
+.main .all-container .container-left .all-info .info .container-text a .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #121418;
+  color: #e9e4e4;
+  border: 1px solid #121418;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-family: new-order, sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.main .all-container .container-left .all-info .info .container-text a .btn:hover {
+  background-color: #e9e4e4;
+  color: #121418;
+  border: 1px solid #e9e4e4;
+}
 .main .all-container .container-right {
   width: 60%;
   height: 100%;
@@ -384,7 +431,7 @@ header .menu .menu-bottom .social-icon:hover:after {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 20px;
 }
 .main .all-container .container-right .article .box .project {
@@ -407,7 +454,7 @@ header .menu .menu-bottom .social-icon:hover:after {
   bottom: 0;
   width: 100%;
   max-height: 40vh;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.71);
   opacity: 0;
   color: #fff;
   display: flex;
@@ -425,6 +472,8 @@ header .menu .menu-bottom .social-icon:hover:after {
   flex-direction: column;
   justify-content: center;
   gap: 30px;
+  width: 70%;
+  height: 100%;
 }
 .main .all-container .container-right .article .box .project .imginfo .hoverinfo .text .textContainer {
   display: flex;
@@ -448,10 +497,11 @@ header .menu .menu-bottom .social-icon:hover:after {
   justify-content: center;
   gap: 15px;
   flex-direction: column;
+  height: 100%;
 }
 .main .all-container .container-right .article .box .project .imginfo .hoverinfo .technos img {
-  width: 65px;
-  height: 65px;
+  width: 60px;
+  height: 60px;
 }
 .main .all-container .container-right .article .box .project .imginfo:hover .hoverinfo {
   opacity: 1;
@@ -474,8 +524,7 @@ header .menu .menu-bottom .social-icon:hover:after {
   text-decoration: none;
 }
 .main .all-container .container-right .article .box .project a h2 {
-  font-size: 35px;
-  line-height: 1.2;
+  font-size: 33px;
   font-family: noka, sans-serif;
   font-weight: 500;
   color: #121418;
@@ -492,9 +541,8 @@ header .menu .menu-bottom .social-icon:hover:after {
   color: #535353;
 }
 .main .all-container .container-right .article .box .project p {
-  line-height: 1.5;
   font-family: noka, sans-serif;
-  max-width: 50ch;
+  max-width: 55ch;
   font-size: 18px;
 }
 .main .all-container .container-right .article .box .plus {

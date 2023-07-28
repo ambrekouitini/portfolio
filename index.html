@@ -48,12 +48,13 @@
 
 </head>
 <body>
+    <div class="triangle" id="custom-cursor"></div>
     <section class="all">
         <header>
             <nav class="menu">
                 <div class="menu-top">
                     <h1>Portfolio Ambre Koutini</h1>
-                    <h2> PORTFOLIO </h2>
+                    <h2 id="portfolio-heading"> PORTFOLIO </h2>
                 </div>
                 <div class="menu-bottom">
                     <div class="social-icons">
@@ -86,12 +87,10 @@
                                 <div class="number">1</div>
                             </div>
                             <h3 class="info-title">Qui suis-je</h3>
-                            <p class="info-text"><br> 
-                                Hello World ! 
+                            <p class="info-text">
+                                Je m'appelle Ambre et je suis une étudiante passionnée en Coding Digital Innovation à l'IIM. 📚 Mon objectif ? Devenir une développeuse Front-End talentueuse ! 👩‍💻
                                 <br><br>
-                                Je me présente, moi c'est Ambre et je suis actuellement étudiante en 2ème année Coding Digital Innovation à l'IIM. 
-                                <br>
-                                Etant créative et passionnée, j'aspire à devenir Developpeuse Front-End.
+                                🎓 Je suis à la recherche d'une alternance pour ma rentrée en 3ème année en septembre 2023, sur un rythme de 3 semaines en entreprise et 1 semaine en cours. 📅
                             </p>
                         </div>
                         <div class="info">
@@ -100,8 +99,12 @@
                             </div>
                             <h3 class="info-title">Langues</h3>
                             <div class="donut-all">
-                                <div class="semidonut style">Anglais</div>
-                                <div class="semidonut">Espagnol</div>
+                                <div class="semidonut style"> 
+                                    <span>Anglais</span>
+                                </div>
+                                <div class="semidonut">
+                                    <span>Espagnol</span> 
+                                </div>
                             </div>
                         </div>
                         <div class="info">
@@ -109,41 +112,101 @@
                                 <div class="number">3</div>
                             </div>
                             <h3 class="info-title">Compétences</h3>
-                            <div class ="skills">
-                                <div class="skills-base"> 
-                                    <img src="images/html.svg" alt="html icon">
-                                    <img src="images/css.svg" alt="css icon">
-                                    <img src="images/scss.svg" alt="sass icon">
-                                    <img src="images/tailwind.svg" alt="tailwind icon">
-                                    <img src="images/html.svg" alt="html icon">
-                                    <img src="images/css.svg" alt="css icon">
-                                    <img src="images/scss.svg" alt="sass icon">
-                                    <img src="images/tailwind.svg" alt="tailwind icon">
+                            <div class="allskills">
+                                <div class ="skills">
+                                    <div class="skills-base"> 
+                                        <img src="images/html.svg" alt="html icon">
+                                        <img src="images/css.svg" alt="css icon">
+                                        <img src="images/scss.svg" alt="sass icon">
+                                        <img src="images/tailwind.svg" alt="tailwind icon">
+                                        <img src="images/html.svg" alt="html icon">
+                                        <img src="images/css.svg" alt="css icon">
+                                        <img src="images/scss.svg" alt="sass icon">
+                                        <img src="images/tailwind.svg" alt="tailwind icon">
+                                    </div>
+                                </div>
+                                <div class="skills-2">
+                                    <div class ="skills-back"> 
+                                        <img src="images/js.svg" alt="js icon">
+                                        <img src="images/vuejs.svg" alt="vuejs icon">
+                                        <img src="images/nodejs.svg" alt="nodejs icon">
+                                        <img src="images/php.svg" alt="php icon">
+                                        <img src="images/mysql.svg" alt="mysql icon">
+                                        <img src="images/symfony.svg" alt="symfony icon">
+                                        <img src="images/wordpress.svg" alt="wordpress icon">
+                                    </div>
+                                </div>
+                                <div class="skills-3">
+                                    <div class="skills-other">
+                                        <img src="images/figma.svg" alt="figma icon">
+                                        <img src="images/adobe-xd.svg" alt="xd icon">
+                                        <img src="images/adobe-photoshop.svg" alt="photoshop icon">
+                                        <img src="images/adobe-premiere.svg" alt="premiere pro icon">
+                                    </div>
                                 </div>
                             </div>
-                            <div class="skills-2">
-                                <div class ="skills-back"> 
-                                    <img src="images/js.svg" alt="js icon">
-                                    <img src="images/vuejs.svg" alt="vuejs icon">
-                                    <img src="images/nodejs.svg" alt="nodejs icon">
-                                    <img src="images/php.svg" alt="php icon">
-                                    <img src="images/mysql.svg" alt="mysql icon">
-                                    <img src="images/symfony.svg" alt="symfony icon">
-                                    <img src="images/wordpress.svg" alt="wordpress icon">
-                                </div>
+
+                        </div>
+                        <div class="info">
+                            <div class="info-date">
+                                <div class="number">4</div>
                             </div>
-                            <div class="skills-3">
-                                <div class="skills-other">
-                                    <img src="images/figma.svg" alt="figma icon">
-                                    <img src="images/adobe-xd.svg" alt="xd icon">
-                                    <img src="images/adobe-photoshop.svg" alt="photoshop icon">
-                                    <img src="images/adobe-premiere.svg" alt="premiere pro icon">
-                                </div>
+                            <h3 class="info-title">CV</h3>
+                            <div class="container-text">
+                                <p class="info-text">
+                                    📥 Explorez mon univers professionnel ! Téléchargez mon CV pour découvrir ma polyvalence et ma détermination à relever de nouveaux défis. 🚀
+                                    <br><br>#AmbreTheLearner #AmbreForHire
+                                </p>
+                                <a href="images/cv-ambre-kouitini.pdf" target="_blank" rel="noopener noreferrer"> 
+                                    <button class="btn"> Télécharger </button>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="container-right">
+                    <div class="article">
+                        <div class="second-header">
+                            <h2 class="big-title">KOUITINI<h2>
+                            <h2 class="big-title-hidden">Projets<h2></h2>
+                            <div class="medium-title-all">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                <h2 class="medium-title" > - Projet : 2023 </h2>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="project">
+                                <div class="imginfo">
+                                    <img class="projectimg" src="images/maisonVepeta.png" alt="maison vepeta photo">
+                                    <div class="hoverinfo">
+                                        <div class="text">
+                                            <h4>Fonctionnalités</h4>
+                                            <div class="textContainer">
+                                                <p>• Création d’identité graphique, recherche UX, maquette du site </p>
+                                                <p>• Gestion des stocks et des produits</p>
+                                                <p>• Suivi des commandes et de l'historique des commandes</p>
+                                                <p>• Système de paiement avec Stripe</p>
+                                                <p>• SEO, Google Analytics et Rich Snippet</p>
+                                            </div>
+                                        </div>
+                                        <div class="technos">
+                                            <img src="images/php.svg" alt="php logo">
+                                            <img src="images/scss.svg" alt="sass logo">
+                                            <img src="images/js.svg" alt="js logo">
+                                            <img src="images/mysql.svg" alt="mysql logo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="https://maisonvepeta.fr/"> <h2> Maison Vepeta </h2> </a>
+                                <p> Réalisation d'un site e-commerce pour la marque Maison Vepeta from scratch en collaboration avec <a href="https://www.linkedin.com/in/brevin-renaud/"> <span> Brévin Renaud </span></a> et <a href="https://www.linkedin.com/in/hugo-senée-6b6076224/"> <span> Hugo Senée</span></a>. 
+                                <br> Le site présente les articles de la marque et possède un espace client/admin.</p>
+                            </div>
+                            <div class="plus">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-activity"><line x1="12" y1="4" x2="12" y2="20"></line><polyline points="18 14 12 20 6 14"></polyline></svg>
+                                <p>Découvrir plus</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="article">
                         <div class="second-header">
                             <h2 class="big-title">KOUITINI<h2>
@@ -338,20 +401,6 @@
             </div>
         </div>
     </section>
-
-    <script>
-        function cloneAndAppend(selector, container, count) {
-            var element = document.querySelector(selector);
-            for (var i = 0; i < count; i++) {
-                var copy = element.cloneNode(true);
-                document.querySelector(container).appendChild(copy);
-            }
-        }
-        cloneAndAppend(".skills-base", ".skills", 2);
-        cloneAndAppend(".skills-back", ".skills-2", 2);
-        cloneAndAppend(".skills-other", ".skills-3", 2);
-    </script>
-    
-
+    <script src="main.js"></script>
 </body>
 </html>
